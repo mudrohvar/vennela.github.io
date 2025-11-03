@@ -79,6 +79,8 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100%;
     /* Improve scroll performance */
     -webkit-overflow-scrolling: touch;
 }
@@ -88,7 +90,10 @@ body {
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
+    overflow: visible;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -159,6 +164,24 @@ body {
     z-index: 1000;
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+/* Hide sidebar scrollbar but keep functionality */
+.sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
 }
 
 .sidebar-content {
@@ -1270,8 +1293,6 @@ body {
     pointer-events: none;
     z-index: 0;
     animation: float-blob 20s ease-in-out infinite;
-    will-change: transform;
-    transform: translateZ(0); /* GPU acceleration */
     backface-visibility: hidden;
 }
 
@@ -1472,8 +1493,6 @@ body {
     pointer-events: none;
     z-index: 0;
     opacity: 0.25;
-    will-change: transform;
-    transform: translateZ(0); /* GPU acceleration */
     backface-visibility: hidden;
 }
 
@@ -1805,10 +1824,7 @@ body {
     backface-visibility: hidden;
 }
 
-/* Prevent layout shifts during animations */
-.section {
-    overflow-x: clip;
-}
+/* Prevent layout shifts during animations - already defined in .section above */
 
 /* Loading Animation */
 @keyframes shimmer {

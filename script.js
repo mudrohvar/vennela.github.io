@@ -248,32 +248,29 @@ function updateParallax() {
         hero.style.opacity = 1 - (scrolled / 1000);
     }
 
-    // Parallax effect for decorative blobs (simplified)
+    // Parallax effect for decorative blobs (simplified and contained)
     const blobs = document.querySelectorAll('.decorative-blob');
     blobs.forEach((blob, index) => {
         const rect = blob.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight + 200 && rect.bottom > -200;
 
         if (isVisible) {
-            const speed = 0.05 + (index * 0.02); // Reduced speeds for smoother performance
+            const speed = 0.03 + (index * 0.01); // Further reduced speeds
             const offset = scrolled * speed;
-            // Use will-change for better performance
-            blob.style.willChange = 'transform';
-            blob.style.transform = `translateY(${offset}px)`;
+            blob.style.transform = `translateY(${Math.min(offset, 100)}px)`;
         }
     });
 
-    // Parallax effect for geometric decorations (simplified)
+    // Parallax effect for geometric decorations (simplified and contained)
     const geometrics = document.querySelectorAll('.geometric-decoration');
     geometrics.forEach((shape, index) => {
         const rect = shape.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight + 200 && rect.bottom > -200;
 
         if (isVisible) {
-            const speed = 0.08 + (index * 0.02);
+            const speed = 0.04 + (index * 0.01);
             const offset = scrolled * speed;
-            shape.style.willChange = 'transform';
-            shape.style.transform = `translateY(${offset}px) rotate(${offset * 0.3}deg)`;
+            shape.style.transform = `translateY(${Math.min(offset, 80)}px) rotate(${offset * 0.2}deg)`;
         }
     });
 
