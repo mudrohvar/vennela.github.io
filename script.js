@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     AOS.init({
         duration: 800,
         easing: 'ease-out-cubic',
-        once: true,
+        once: false,  // Allow animations to trigger both ways when scrolling
         offset: 100,
-        delay: 100
+        delay: 100,
+        mirror: true  // Animate elements out while scrolling past them
     });
 
     // Initialize all features
@@ -325,6 +326,9 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('animate-in');
+        } else {
+            // Remove class when element leaves viewport for re-animation
+            entry.target.classList.remove('animate-in');
         }
     });
 }, observerOptions);
