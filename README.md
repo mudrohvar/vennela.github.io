@@ -15,13 +15,19 @@ This website draws inspiration from modern portfolio sites including:
 
 ### Design & UI
 - **Dark Modern Theme** - Sophisticated color palette with indigo, purple, and cyan accents
-- **Fixed Sidebar Profile** - Left sidebar with your profile, navigation, and social links
+- **Fixed Sidebar Profile** - Narrowed to 280px for better content centering
 - **Gradient Orbs Background** - Animated floating gradient orbs in hero section
+- **Organic Blob Shapes** - Colorful floating blobs in coral, teal, sunshine, mint, and lavender throughout sections
+- **Geometric Patterns** - Dotted grid in sidebar, diagonal lines behind headers, floating shapes (circles, squares, triangles)
+- **Enhanced Color Palette** - 5 new accent colors (coral, teal, sunshine yellow, mint, lavender) used strategically
 - **Smooth Animations** - Scroll-triggered animations using AOS library
+- **Parallax Effects** - Decorative elements move with scroll and mouse for depth
 - **Responsive Design** - Works beautifully on all devices (desktop, tablet, mobile)
+- **Centered Content** - Main content max-width 1100px, centered for better readability
 - **Google Fonts Integration** - Inter, Space Grotesk, and JetBrains Mono
 - **Font Awesome Icons** - Professional icon system throughout
 - **Real Images** - Unsplash images for article thumbnails (easily replaceable)
+- **Colorful Cards** - Each card type has unique color hover effects and decorative corners
 
 ### Interactive Features
 - **Live Time Display** - Shows current time that updates every second
@@ -30,8 +36,13 @@ This website draws inspiration from modern portfolio sites including:
 - **Active Navigation** - Highlights current section in sidebar navigation
 - **Smooth Scrolling** - Seamless navigation between sections
 - **Mobile Menu** - Touch-friendly hamburger menu for mobile devices
-- **Hover Effects** - Subtle animations on cards, buttons, and links
-- **Parallax Hero** - Parallax scrolling effect on hero section
+- **Colorful Hover Effects** - Each card has unique colored borders and glows on hover
+- **Parallax Decorations** - Blobs and geometric shapes move with scroll
+- **Mouse Interaction** - Decorative elements subtly follow mouse movement
+- **Gradient Text** - Section titles use colorful gradients
+- **Animated Underlines** - Links have animated gradient underlines on hover
+- **Floating Animations** - Blobs float independently with CSS animations
+- **Rotating Shapes** - Geometric decorations rotate as they float
 - **Keyboard Shortcuts** - Press 'H' for home, 'C' for contact
 
 ### Content Sections
@@ -80,18 +91,35 @@ Common timezones:
 
 ### 2. Customize Colors (Optional)
 
-Edit `styles.css` (lines 8-20) to change the color scheme:
+Edit `styles.css` (lines 8-27) to change the color scheme:
 
 ```css
 :root {
     --bg-primary: #0a0a0a;           /* Dark background */
     --bg-secondary: #151515;          /* Sidebar/card background */
-    --accent-primary: #6366f1;        /* Primary accent (indigo) */
-    --accent-secondary: #8b5cf6;      /* Secondary accent (purple) */
-    --accent-tertiary: #ec4899;       /* Tertiary accent (pink) */
-    --accent-cyan: #06b6d4;           /* Cyan accent */
+
+    /* Primary Palette */
+    --accent-primary: #6366f1;        /* Indigo */
+    --accent-secondary: #8b5cf6;      /* Purple */
+    --accent-tertiary: #ec4899;       /* Pink */
+    --accent-cyan: #06b6d4;           /* Cyan */
+    --accent-yellow: #f59e0b;         /* Amber */
+
+    /* Extended Palette (New!) */
+    --accent-coral: #FF6B6B;          /* Coral - warm, friendly */
+    --accent-teal: #4ECDC4;           /* Teal - fresh, modern */
+    --accent-sunshine: #FFE66D;       /* Sunshine Yellow */
+    --accent-mint: #95E1D3;           /* Mint - calming */
+    --accent-lavender: #A8DADC;       /* Lavender - soft */
 }
 ```
+
+**Color Usage Map:**
+- Coral: CTAs, first contact card, competency icon #1
+- Teal: Success states, competency icons #2, card hover
+- Sunshine: Highlights, warning states, competency icon #3
+- Mint: Secondary accents, competency icon #4
+- Lavender: Soft accents, competency icon #5
 
 ### 3. Deploy to GitHub Pages
 

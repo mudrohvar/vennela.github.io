@@ -12,12 +12,19 @@
     --text-secondary: #a0a0a0;
     --text-tertiary: #6b6b6b;
 
-    /* Accent Colors */
+    /* Accent Colors - Primary */
     --accent-primary: #6366f1;      /* Indigo */
     --accent-secondary: #8b5cf6;    /* Purple */
     --accent-tertiary: #ec4899;     /* Pink */
     --accent-cyan: #06b6d4;         /* Cyan */
     --accent-yellow: #f59e0b;       /* Amber */
+
+    /* Accent Colors - Extended Palette for Colorful Elements */
+    --accent-coral: #FF6B6B;        /* Coral - warm, friendly */
+    --accent-teal: #4ECDC4;         /* Teal - fresh, modern */
+    --accent-sunshine: #FFE66D;     /* Sunshine Yellow - energetic */
+    --accent-mint: #95E1D3;         /* Mint - calming */
+    --accent-lavender: #A8DADC;     /* Lavender - soft */
 
     /* UI Colors */
     --border-color: #2a2a2a;
@@ -49,8 +56,14 @@
     --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Sidebar */
-    --sidebar-width: 320px;
+    /* Layout */
+    --sidebar-width: 280px;
+    --content-max-width: 1100px;
+
+    /* Decorative Elements */
+    --blob-blur: 80px;
+    --pattern-opacity: 0.05;
+    --decoration-opacity: 0.15;
 }
 
 /* ==========================================
@@ -370,6 +383,15 @@ body {
 .main-content {
     margin-left: var(--sidebar-width);
     min-height: 100vh;
+    max-width: calc(100vw - var(--sidebar-width));
+    position: relative;
+}
+
+/* Center content within sections */
+.section > * {
+    max-width: var(--content-max-width);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ==========================================
@@ -1230,6 +1252,398 @@ body {
     .writing-image {
         height: 200px;
     }
+}
+
+/* ==========================================
+   Decorative Elements - Organic Blobs
+   ========================================== */
+
+.decorative-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(var(--blob-blur));
+    opacity: var(--decoration-opacity);
+    pointer-events: none;
+    z-index: 0;
+    animation: float-blob 20s ease-in-out infinite;
+}
+
+/* Hero Section Blobs */
+.hero-section .decorative-blob.blob-coral {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-coral);
+    top: 10%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.hero-section .decorative-blob.blob-teal {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-teal);
+    bottom: -100px;
+    left: 5%;
+    animation-delay: 7s;
+}
+
+.hero-section .decorative-blob.blob-sunshine {
+    width: 350px;
+    height: 350px;
+    background: var(--accent-sunshine);
+    top: 40%;
+    right: -50px;
+    animation-delay: 14s;
+}
+
+/* About Section Blobs */
+.about-section .decorative-blob.blob-mint {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-mint);
+    top: 20%;
+    right: 5%;
+    animation-delay: 3s;
+}
+
+.about-section .decorative-blob.blob-lavender {
+    width: 350px;
+    height: 350px;
+    background: var(--accent-lavender);
+    bottom: 10%;
+    left: 8%;
+    animation-delay: 10s;
+}
+
+/* Philosophy Section Blobs */
+.philosophy-section .decorative-blob.blob-coral {
+    width: 280px;
+    height: 280px;
+    background: var(--accent-coral);
+    top: 15%;
+    left: 5%;
+    animation-delay: 5s;
+}
+
+.philosophy-section .decorative-blob.blob-teal {
+    width: 320px;
+    height: 320px;
+    background: var(--accent-teal);
+    bottom: 20%;
+    right: 8%;
+    animation-delay: 12s;
+}
+
+/* Contact Section Blobs */
+.contact-section .decorative-blob.blob-sunshine {
+    width: 450px;
+    height: 450px;
+    background: var(--accent-sunshine);
+    top: -100px;
+    left: 10%;
+    animation-delay: 2s;
+}
+
+.contact-section .decorative-blob.blob-mint {
+    width: 380px;
+    height: 380px;
+    background: var(--accent-mint);
+    bottom: -80px;
+    right: 5%;
+    animation-delay: 9s;
+}
+
+@keyframes float-blob {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    25% {
+        transform: translate(30px, -40px) scale(1.1);
+    }
+    50% {
+        transform: translate(-20px, 30px) scale(0.9);
+    }
+    75% {
+        transform: translate(40px, 20px) scale(1.05);
+    }
+}
+
+/* ==========================================
+   Decorative Elements - Geometric Patterns
+   ========================================== */
+
+/* Dotted grid pattern for sidebar */
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: var(--pattern-opacity);
+    pointer-events: none;
+}
+
+/* Diagonal lines behind section headers */
+.section-header::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background-image: repeating-linear-gradient(
+        45deg,
+        var(--accent-primary) 0px,
+        var(--accent-primary) 2px,
+        transparent 2px,
+        transparent 20px
+    );
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.section-header {
+    position: relative;
+}
+
+/* Decorative corner elements for cards */
+.competency-item::before,
+.timeline-content::before,
+.thought-card::before,
+.writing-card::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    opacity: 0.1;
+    transition: var(--transition-base);
+}
+
+.competency-item::before {
+    top: -10px;
+    right: -10px;
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-coral));
+    border-radius: 0 12px 0 40px;
+}
+
+.timeline-content::before {
+    bottom: -10px;
+    right: -10px;
+    background: linear-gradient(135deg, var(--accent-sunshine), var(--accent-mint));
+    border-radius: 40px 0 12px 0;
+}
+
+.thought-card::before {
+    top: -5px;
+    left: -5px;
+    background: linear-gradient(135deg, var(--accent-lavender), var(--accent-teal));
+    border-radius: 12px 0 40px 0;
+}
+
+.writing-card::after {
+    bottom: -5px;
+    left: -5px;
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-sunshine));
+    border-radius: 40px 0 0 12px;
+}
+
+.competency-item:hover::before,
+.timeline-content:hover::before,
+.thought-card:hover::before,
+.writing-card:hover::after {
+    opacity: 0.2;
+}
+
+/* Floating geometric shapes */
+.geometric-decoration {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.1;
+}
+
+.geometric-decoration.circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--accent-teal);
+    border-radius: 50%;
+    animation: float-rotate 15s linear infinite;
+}
+
+.geometric-decoration.square {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--accent-coral);
+    transform: rotate(45deg);
+    animation: float-rotate 20s linear infinite reverse;
+}
+
+.geometric-decoration.triangle {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid var(--accent-sunshine);
+    animation: float-rotate 18s linear infinite;
+}
+
+@keyframes float-rotate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+    }
+}
+
+/* ==========================================
+   Enhanced Card Styling with Colors
+   ========================================== */
+
+/* Colorful competency icons */
+.competency-item:nth-child(1) .competency-icon {
+    background: linear-gradient(135deg, var(--accent-coral), var(--accent-tertiary));
+}
+
+.competency-item:nth-child(2) .competency-icon {
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-cyan));
+}
+
+.competency-item:nth-child(3) .competency-icon {
+    background: linear-gradient(135deg, var(--accent-sunshine), var(--accent-yellow));
+}
+
+.competency-item:nth-child(4) .competency-icon {
+    background: linear-gradient(135deg, var(--accent-mint), var(--accent-teal));
+}
+
+.competency-item:nth-child(5) .competency-icon {
+    background: linear-gradient(135deg, var(--accent-lavender), var(--accent-primary));
+}
+
+.competency-item:nth-child(6) .competency-icon {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+/* Colorful hover effects on cards */
+.competency-item:hover {
+    border-color: var(--accent-teal);
+    box-shadow: 0 10px 40px rgba(78, 205, 196, 0.2);
+}
+
+.timeline-content:hover {
+    border-color: var(--accent-coral);
+    box-shadow: 0 10px 40px rgba(255, 107, 107, 0.2);
+}
+
+.thought-card:hover {
+    border-color: var(--accent-sunshine);
+    box-shadow: 0 10px 40px rgba(255, 230, 109, 0.15);
+}
+
+.writing-card:hover {
+    border-color: var(--accent-mint);
+    box-shadow: 0 10px 40px rgba(149, 225, 211, 0.2);
+}
+
+/* Colored tags */
+.tag:nth-child(1) {
+    border-color: var(--accent-coral);
+    color: var(--accent-coral);
+}
+
+.tag:nth-child(2) {
+    border-color: var(--accent-teal);
+    color: var(--accent-teal);
+}
+
+.tag:nth-child(3) {
+    border-color: var(--accent-sunshine);
+    color: var(--accent-sunshine);
+}
+
+/* Gradient text for section titles */
+.section-title {
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-lavender), var(--accent-teal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% auto;
+}
+
+/* Colorful underlines for links */
+.thought-link,
+.writing-link {
+    position: relative;
+}
+
+.thought-link::after,
+.writing-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-coral), var(--accent-teal));
+    transition: var(--transition-base);
+}
+
+.thought-link:hover::after,
+.writing-link:hover::after {
+    width: 100%;
+}
+
+/* Enhanced contact cards with colored backgrounds */
+.contact-card:nth-child(1):hover {
+    border-color: var(--accent-coral);
+    box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
+}
+
+.contact-card:nth-child(2):hover {
+    border-color: var(--accent-teal);
+    box-shadow: 0 10px 40px rgba(78, 205, 196, 0.3);
+}
+
+.contact-card:nth-child(3):hover {
+    border-color: var(--accent-sunshine);
+    box-shadow: 0 10px 40px rgba(255, 230, 109, 0.2);
+}
+
+.contact-card:nth-child(4):hover {
+    border-color: var(--accent-mint);
+    box-shadow: 0 10px 40px rgba(149, 225, 211, 0.3);
+}
+
+/* ==========================================
+   Section Dividers
+   ========================================== */
+
+.section-divider {
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+    margin: var(--spacing-2xl) 0;
+}
+
+.section-divider svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Wave path for dividers */
+.wave-divider {
+    fill: var(--bg-secondary);
+    opacity: 0.5;
 }
 
 /* ==========================================
