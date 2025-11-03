@@ -1,187 +1,204 @@
-# Personal Portfolio Website
+# Modern Portfolio Website
 
-A modern, animated personal portfolio website built for GitHub Pages. This website showcases your experience, skills, work, and philosophy as a Product Manager.
+A sophisticated, dark-themed personal portfolio website built for GitHub Pages. This website features a modern design with a fixed sidebar, smooth animations, and all the content sections you need to showcase your experience as a Product Manager.
+
+## Design Inspiration
+
+This website draws inspiration from modern portfolio sites including:
+- **mitchcanter.me** - Fixed sidebar profile layout
+- **omareletr.com** - Live time display and scrolling job titles
+- **sherlaine.com** - Clean UI elements and generous spacing
+- **samdickie.me** - Modern animations and interactions
+- **rezarezaeipour.com** - Portfolio presentation style
 
 ## Features
 
-- **Modern UI Design**: Clean, professional design with smooth animations
-- **Responsive Layout**: Works perfectly on desktop, tablet, and mobile devices
-- **Live Time Display**: Shows current time at the top of the page
-- **Scrolling Titles**: Animated titles that rotate beneath your name
-- **Time Counter**: Displays how long you've been building products
-- **Interactive Sections**:
-  - About Me
-  - Core Competencies (Skills)
-  - Philosophy (Work & Life Ideology)
-  - Experience Timeline
-  - PM Thoughts
-  - Written Work
-  - Contact Information
-- **Smooth Animations**: Fade-in effects, hover animations, and scroll effects
-- **Resume Download**: Direct download button for your resume
+### Design & UI
+- **Dark Modern Theme** - Sophisticated color palette with indigo, purple, and cyan accents
+- **Fixed Sidebar Profile** - Left sidebar with your profile, navigation, and social links
+- **Gradient Orbs Background** - Animated floating gradient orbs in hero section
+- **Smooth Animations** - Scroll-triggered animations using AOS library
+- **Responsive Design** - Works beautifully on all devices (desktop, tablet, mobile)
+- **Google Fonts Integration** - Inter, Space Grotesk, and JetBrains Mono
+- **Font Awesome Icons** - Professional icon system throughout
+- **Real Images** - Unsplash images for article thumbnails (easily replaceable)
 
-## Setup Instructions
+### Interactive Features
+- **Live Time Display** - Shows current time that updates every second
+- **Rotating Job Titles** - Animated rotating titles under your name
+- **Time Counter** - Displays how long you've been building products
+- **Active Navigation** - Highlights current section in sidebar navigation
+- **Smooth Scrolling** - Seamless navigation between sections
+- **Mobile Menu** - Touch-friendly hamburger menu for mobile devices
+- **Hover Effects** - Subtle animations on cards, buttons, and links
+- **Parallax Hero** - Parallax scrolling effect on hero section
+- **Keyboard Shortcuts** - Press 'H' for home, 'C' for contact
+
+### Content Sections
+1. **Hero Section** - Eye-catching introduction with animated background
+2. **About Me** - Personal introduction and background
+3. **Core Competencies** - Your key skills with icons (Product Sense, Customer-Centric Design, etc.)
+4. **Experience Timeline** - Professional experience with achievements and tags
+5. **Philosophy** - Your work and life philosophy in gradient cards
+6. **PM Thoughts** - Showcase your thought leadership articles
+7. **Written Work** - Published articles with images and metadata
+8. **Contact** - Multiple ways to connect (Email, LinkedIn, Twitter, Calendly)
+
+## Quick Start
 
 ### 1. Customize Your Content
 
-Edit `index.html` to update:
+**Update Personal Information:**
+- Line 32: Change profile image API name
+- Line 36: Update your name
+- Lines 40-43: Customize rotating job titles
+- Line 50: Update your location
+- Lines 85-96: Update social media links
 
-- **Line 8**: Update the page title
-- **Lines 14-15**: Update your initials in the logo
-- **Line 40**: Update your name
-- **Lines 41-46**: Customize the scrolling titles
-- **All sections**: Replace placeholder content with your actual information
-- **Contact section**: Update email, LinkedIn, Twitter links
+**Update Time Settings:**
 
-### 2. Update JavaScript Settings
-
-Edit `script.js` to configure:
-
-- **Line 5**: Change timezone to your location (e.g., 'America/New_York', 'Europe/London', 'Asia/Tokyo')
-- **Line 24**: Set your career start date for the time counter
-
+Edit `script.js`:
 ```javascript
-const startDate = new Date('2018-01-01'); // Change this to when you started building products
+// Line 35: Set your timezone
+timeZone: 'America/New_York',  // Change to your timezone
+
+// Line 59: Set your career start date
+const startDate = new Date('2018-01-01');
 ```
 
-### 3. Add Your Resume
+Common timezones:
+- `'America/New_York'` (EST)
+- `'America/Los_Angeles'` (PST)
+- `'Europe/London'` (GMT)
+- `'Asia/Tokyo'` (JST)
+- `'Asia/Kolkata'` (IST)
 
-1. Create an `assets` folder in the project root
-2. Place your resume PDF as `resume.pdf` in the assets folder
-3. The download button in the navigation will automatically work
+**Replace Content:**
+- Update all sections with your actual information
+- Replace placeholder images in Written Work section (Lines 424, 448, 472)
+- Add your resume to `assets/resume.pdf`
 
-### 4. Customize Colors
+### 2. Customize Colors (Optional)
 
-Edit `styles.css` (lines 2-12) to change the color scheme:
+Edit `styles.css` (lines 8-20) to change the color scheme:
 
 ```css
 :root {
-    --primary-color: #2563eb;  /* Main brand color */
-    --secondary-color: #0f172a; /* Secondary color */
-    --accent: #3b82f6; /* Accent color */
-    /* ... other variables ... */
+    --bg-primary: #0a0a0a;           /* Dark background */
+    --bg-secondary: #151515;          /* Sidebar/card background */
+    --accent-primary: #6366f1;        /* Primary accent (indigo) */
+    --accent-secondary: #8b5cf6;      /* Secondary accent (purple) */
+    --accent-tertiary: #ec4899;       /* Tertiary accent (pink) */
+    --accent-cyan: #06b6d4;           /* Cyan accent */
 }
 ```
 
-## Deploying to GitHub Pages
+### 3. Deploy to GitHub Pages
 
-### Option 1: Using GitHub Web Interface
+**Option A: GitHub Web Interface**
 
-1. Create a new repository on GitHub (e.g., `your-username.github.io`)
-2. Upload all files:
-   - index.html
-   - styles.css
-   - script.js
-   - README.md
-   - assets/resume.pdf
-3. Go to repository Settings > Pages
-4. Select "Deploy from a branch" under Source
-5. Choose "main" branch and "/ (root)" folder
-6. Click Save
+1. Create a new repository: `your-username.github.io`
+2. Upload all files via "Add file" > "Upload files"
+3. Go to Settings > Pages
+4. Set Source to "main" branch, "/ (root)" folder
+5. Click Save
+6. Your site will be live at `https://your-username.github.io`
 
-Your site will be available at: `https://your-username.github.io`
-
-### Option 2: Using Git Command Line
+**Option B: Git Command Line**
 
 ```bash
-# Initialize git repository
 git init
-
-# Add all files
 git add .
-
-# Commit files
-git commit -m "Initial commit: Personal portfolio website"
-
-# Add remote repository
+git commit -m "Initial commit: Modern portfolio website"
 git remote add origin https://github.com/your-username/your-username.github.io.git
-
-# Push to GitHub
+git branch -M main
 git push -u origin main
 ```
 
-Then configure GitHub Pages in repository settings as described in Option 1.
-
-## Customization Tips
-
-### Adding Real Images
-
-Replace placeholder emoji images in the Written Work section:
-
-1. Add images to an `assets/images/` folder
-2. Update the HTML:
-
-```html
-<div class="work-image">
-    <img src="assets/images/article-1.jpg" alt="Article preview">
-</div>
-```
-
-### Linking Your Articles
-
-Update the links in the Written Work and PM Thoughts sections:
-
-```html
-<a href="https://medium.com/@yourhandle/article-slug" class="work-link">Read Article →</a>
-```
-
-### Changing Fonts
-
-To use a custom font (e.g., Google Fonts):
-
-1. Add to `<head>` in index.html:
-```html
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-```
-
-2. Update `styles.css`:
-```css
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-```
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+Then enable GitHub Pages in repository Settings > Pages.
 
 ## File Structure
 
 ```
 PersonalWebsite/
-├── index.html          # Main HTML file
-├── styles.css          # All styles and animations
-├── script.js           # Interactive features
-├── README.md           # This file
+├── index.html                 # Main HTML file
+├── styles.css                 # All styles (1200+ lines)
+├── script.js                  # Interactive features
+├── README.md                  # This file
+├── CUSTOMIZATION.md           # Detailed customization guide
+├── GITHUB_PAGES_SETUP.md      # Deployment instructions
+├── .nojekyll                  # GitHub Pages config
 └── assets/
-    └── resume.pdf      # Your resume (add this)
+    └── resume.pdf             # Your resume (add this)
 ```
 
-## Features Inspired By
+## Browser Support
 
-- **sherlaine.com**: Modern UI elements
-- **mitchcanter.me**: Profile layout structure
-- **omareletr.com**: Scrolling titles and time display
-- **rezarezaeipour.com**: Portfolio dive-in page design
-- **samdickie.me**: UI design, animations, and navigation
+- Chrome (latest) ✅
+- Firefox (latest) ✅
+- Safari (latest) ✅
+- Edge (latest) ✅
+- Mobile browsers ✅
+
+## Technologies Used
+
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with CSS variables, Grid, and Flexbox
+- **JavaScript (ES6+)** - Interactive features
+- **Google Fonts** - Typography (Inter, Space Grotesk, JetBrains Mono)
+- **Font Awesome 6** - Icon system
+- **AOS Library** - Scroll animations
+- **Unsplash** - Placeholder images
+
+## Customization Guide
+
+For detailed customization instructions, see [CUSTOMIZATION.md](CUSTOMIZATION.md).
+
+Quick checklist:
+- [ ] Update your name everywhere
+- [ ] Set your timezone and career start date
+- [ ] Update location in sidebar
+- [ ] Replace all placeholder content
+- [ ] Update social media links
+- [ ] Add your resume PDF
+- [ ] Replace article images
+- [ ] Update contact information
+- [ ] Test on mobile devices
+
+## Deployment Guide
+
+For detailed deployment instructions, see [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md).
+
+## Performance
+
+This website is optimized for performance:
+- Minimal dependencies (only AOS and Font Awesome from CDN)
+- No heavy frameworks (React, Vue, etc.)
+- Optimized CSS with efficient selectors
+- Debounced scroll event handlers
+- Lazy loading support for images
+
+## Accessibility
+
+- Semantic HTML5 elements
+- Keyboard navigation support ('H' for home, 'C' for contact)
+- ARIA labels where appropriate
+- High contrast dark theme
+- Smooth scroll with `prefers-reduced-motion` respect
 
 ## Need Help?
 
-If you encounter any issues:
-
-1. Check browser console for errors (F12)
-2. Verify all file paths are correct
-3. Ensure all files are uploaded to GitHub
-4. Check GitHub Pages deployment status in repository settings
+1. Check [CUSTOMIZATION.md](CUSTOMIZATION.md) for detailed customization steps
+2. Check [GITHUB_PAGES_SETUP.md](GITHUB_PAGES_SETUP.md) for deployment help
+3. Review the code comments in all files
+4. Test in browser DevTools console (F12) for any errors
 
 ## License
 
-Feel free to use this template for your personal website. Just update the content with your own information!
+Feel free to use this template for your personal portfolio. Just update the content with your own information!
 
 ---
 
-Built with HTML, CSS, and JavaScript. No frameworks required!
+**Built with HTML, CSS, and JavaScript. No frameworks, just modern web standards.**
+
+Made with ❤️ for Product Managers who code.

@@ -1,91 +1,277 @@
-// Current Time Display
-function updateTime() {
-    const now = new Date();
-    const options = {
-        timeZone: 'America/New_York', // Change this to your timezone
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-    };
-    const timeString = now.toLocaleTimeString('en-US', options);
-    const dateString = now.toLocaleDateString('en-US', {
-        timeZone: 'America/New_York',
-        month: 'short',
-        day: 'numeric'
+// ==========================================
+// Personal Portfolio Website - JavaScript
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize AOS (Animate On Scroll)
+    AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 100,
+        delay: 100
     });
 
-    document.getElementById('currentTime').textContent = `${dateString} • ${timeString}`;
-}
+    // Initialize all features
+    initTimeClock();
+    initTimeCounter();
+    initMobileMenu();
+    initSmoothScroll();
+    initActiveNav();
+    initPageLoad();
 
-// Update time every second
-setInterval(updateTime, 1000);
-updateTime();
+    console.log('Portfolio website loaded successfully! 🚀');
+});
 
-// Time Counter - Calculate time since start date
-function updateTimeCounter() {
-    // Set your start date here (when you started building products)
-    const startDate = new Date('2018-01-01'); // Change this to your actual start date
-    const now = new Date();
+// ==========================================
+// Live Time Display
+// ==========================================
+function initTimeClock() {
+    function updateTime() {
+        const now = new Date();
 
-    const diffTime = Math.abs(now - startDate);
-    const diffYears = diffTime / (1000 * 60 * 60 * 24 * 365.25);
+        // Change timezone as needed (e.g., 'America/New_York', 'Europe/London', 'Asia/Tokyo')
+        const options = {
+            timeZone: 'America/New_York',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: true
+        };
 
-    // Format the time
-    const years = Math.floor(diffYears);
-    const remainingMonths = (diffYears - years) * 12;
-    const months = Math.floor(remainingMonths);
+        const timeString = now.toLocaleTimeString('en-US', options);
+        const timeElement = document.getElementById('currentTime');
 
-    let timeString = '';
-    if (years > 0) {
-        timeString = `${years} year${years !== 1 ? 's' : ''}`;
-        if (months > 0) {
-            timeString += ` ${months} month${months !== 1 ? 's' : ''}`;
+        if (timeElement) {
+            timeElement.textContent = timeString;
         }
-    } else {
-        timeString = `${months} month${months !== 1 ? 's' : ''}`;
     }
 
-    document.getElementById('timeCounter').textContent = timeString;
+    updateTime();
+    setInterval(updateTime, 1000); // Update every second
 }
 
-updateTimeCounter();
+// ==========================================
+// Time Counter (Years/Months building products)
+// ==========================================
+function initTimeCounter() {
+    function updateTimeCounter() {
+        // SET YOUR START DATE HERE - when you started building products
+        const startDate = new Date('2018-01-01'); // Change this to your actual start date
+        const now = new Date();
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && href.length > 1) {
-            e.preventDefault();
+        const diffTime = Math.abs(now - startDate);
+        const diffYears = diffTime / (1000 * 60 * 60 * 24 * 365.25);
+
+        const years = Math.floor(diffYears);
+        const remainingMonths = (diffYears - years) * 12;
+        const months = Math.floor(remainingMonths);
+
+        let timeString = '';
+        if (years > 0) {
+            timeString = `${years} year${years !== 1 ? 's' : ''}`;
+            if (months > 0) {
+                timeString += ` ${months} month${months !== 1 ? 's' : ''}`;
+            }
+        } else {
+            timeString = `${months} month${months !== 1 ? 's' : ''}`;
+        }
+
+        const counterElement = document.getElementById('timeCounter');
+        if (counterElement) {
+            counterElement.textContent = timeString;
+        }
+    }
+
+    updateTimeCounter();
+}
+
+// ==========================================
+// Mobile Menu Toggle
+// ==========================================
+function initMobileMenu() {
+    const menuToggle = document.getElementById('mobileMenuToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+
+            // Change icon
+            const icon = this.querySelector('i');
+            if (sidebar.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close sidebar when clicking on nav items (mobile)
+        const navItems = sidebar.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Close sidebar when clicking outside (mobile)
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 768) {
+                if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sidebar.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+        });
+    }
+}
+
+// ==========================================
+// Smooth Scrolling for Navigation Links
+// ==========================================
+function initSmoothScroll() {
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+
+            // Skip if it's just '#' or empty
+            if (href === '#' || href.length <= 1) {
+                e.preventDefault();
+                return;
+            }
+
             const target = document.querySelector(href);
+
             if (target) {
-                const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                e.preventDefault();
+
+                // Calculate offset (account for any fixed elements)
+                const offsetTop = target.offsetTop - 20;
+
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+
+                // Update URL without jumping
+                history.pushState(null, null, href);
             }
-        }
+        });
     });
-});
+}
 
-// Navbar scroll effect
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
+// ==========================================
+// Active Navigation State
+// ==========================================
+function initActiveNav() {
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+    function updateActiveNav() {
+        const scrollY = window.pageYOffset;
 
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = 'none';
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+
+                    if (item.getAttribute('href') === `#${sectionId}`) {
+                        item.classList.add('active');
+                    }
+                });
+            }
+        });
     }
 
-    lastScroll = currentScroll;
+    // Update on scroll
+    window.addEventListener('scroll', updateActiveNav);
+
+    // Update on load
+    updateActiveNav();
+}
+
+// ==========================================
+// Page Load Animation
+// ==========================================
+function initPageLoad() {
+    // Fade in page on load
+    document.body.style.opacity = '0';
+
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease-in';
+        document.body.style.opacity = '1';
+    }, 100);
+
+    // Remove any hash from URL on load if needed
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            setTimeout(() => {
+                const offsetTop = target.offsetTop - 20;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }, 300);
+        }
+    }
+}
+
+// ==========================================
+// Parallax Effect for Hero Section
+// ==========================================
+window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.hero-content');
+
+    if (hero && scrolled < window.innerHeight) {
+        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        hero.style.opacity = 1 - (scrolled / 1000);
+    }
 });
 
-// Intersection Observer for fade-in animations
+// ==========================================
+// Cursor Effect (Optional - Subtle)
+// ==========================================
+function initCursorEffect() {
+    // Add this if you want a custom cursor effect
+    const cursor = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    document.body.appendChild(cursor);
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // Add hover effects on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .btn');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    });
+}
+
+// Uncomment to enable cursor effect
+// initCursorEffect();
+
+// ==========================================
+// Intersection Observer for Advanced Animations
+// ==========================================
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -94,197 +280,93 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
+            entry.target.classList.add('animate-in');
         }
     });
 }, observerOptions);
 
-// Observe all sections
-document.querySelectorAll('.section').forEach(section => {
-    observer.observe(section);
+// Observe elements for animation
+document.querySelectorAll('.competency-item, .timeline-item, .thought-card, .writing-card, .contact-card').forEach(el => {
+    observer.observe(el);
 });
 
-// Observe skill cards
-document.querySelectorAll('.skill-card').forEach(card => {
-    observer.observe(card);
-});
+// ==========================================
+// Keyboard Navigation Support
+// ==========================================
+document.addEventListener('keydown', function(e) {
+    // Press 'h' to go to home
+    if (e.key === 'h' || e.key === 'H') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-// Observe timeline items
-document.querySelectorAll('.timeline-item').forEach(item => {
-    observer.observe(item);
-});
-
-// Observe thought cards
-document.querySelectorAll('.thought-card').forEach(card => {
-    observer.observe(card);
-});
-
-// Observe work items
-document.querySelectorAll('.work-item').forEach(item => {
-    observer.observe(item);
-});
-
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero-content');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        hero.style.opacity = 1 - (scrolled / 700);
+    // Press 'c' to go to contact
+    if (e.key === 'c' || e.key === 'C') {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
     }
 });
 
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease-in';
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-// Cursor trail effect (optional - can be removed if too much)
-const coords = { x: 0, y: 0 };
-const circles = document.querySelectorAll('.circle');
-
-if (circles.length === 0) {
-    // Create circles for cursor trail
-    for (let i = 0; i < 20; i++) {
-        const circle = document.createElement('div');
-        circle.classList.add('circle');
-        document.body.appendChild(circle);
-    }
-}
-
-window.addEventListener('mousemove', (e) => {
-    coords.x = e.clientX;
-    coords.y = e.clientY;
-});
-
-// Dynamic year in footer
-const footerYear = document.querySelector('.footer p');
-if (footerYear) {
+// ==========================================
+// Dynamic Year in Footer
+// ==========================================
+const footerText = document.querySelector('.footer-content p');
+if (footerText) {
     const currentYear = new Date().getFullYear();
-    footerYear.textContent = footerYear.textContent.replace('2025', currentYear);
+    footerText.textContent = footerText.textContent.replace('2025', currentYear);
 }
 
-// Add active state to navigation based on scroll position
-function updateActiveNav() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
+// ==========================================
+// Performance Optimization
+// ==========================================
 
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+// Debounce function for scroll events
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
 
-        if (navLink && scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.style.color = '';
-            });
-            navLink.style.color = 'var(--primary-color)';
+// Apply debounce to scroll-heavy functions
+const debouncedScrollHandler = debounce(() => {
+    // Any expensive scroll operations go here
+}, 100);
+
+window.addEventListener('scroll', debouncedScrollHandler);
+
+// ==========================================
+// Console Easter Egg
+// ==========================================
+console.log('%c👋 Hello there!', 'font-size: 20px; font-weight: bold; color: #6366f1;');
+console.log('%cLooking at the code? I like your style!', 'font-size: 14px; color: #8b5cf6;');
+console.log('%c💼 Let\'s connect!', 'font-size: 14px; color: #ec4899;');
+
+// ==========================================
+// Preload Critical Assets
+// ==========================================
+window.addEventListener('load', function() {
+    // Preload any critical assets here
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach(img => {
+        if (img.dataset.src) {
+            img.src = img.dataset.src;
         }
-    });
-}
-
-window.addEventListener('scroll', updateActiveNav);
-
-// Typing effect for hero subtitle (optional enhancement)
-function typeWriter(element, text, speed = 50) {
-    let i = 0;
-    element.textContent = '';
-
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-
-    type();
-}
-
-// Smooth reveal for elements
-function revealElements() {
-    const reveals = document.querySelectorAll('.reveal');
-
-    reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', revealElements);
-
-// Add hover effect to cards
-document.querySelectorAll('.skill-card, .thought-card, .work-item, .contact-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
     });
 });
 
-// Lazy loading for images (when you add real images)
-if ('IntersectionObserver' in window) {
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.add('loaded');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    document.querySelectorAll('img[data-src]').forEach(img => {
-        imageObserver.observe(img);
-    });
+// ==========================================
+// Add AOS CSS if not loaded
+// ==========================================
+if (typeof AOS === 'undefined') {
+    const aosLink = document.createElement('link');
+    aosLink.rel = 'stylesheet';
+    aosLink.href = 'https://unpkg.com/aos@2.3.1/dist/aos.css';
+    document.head.appendChild(aosLink);
 }
-
-// Add scroll progress indicator
-function updateScrollProgress() {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-
-    let progressBar = document.querySelector('.scroll-progress');
-    if (!progressBar) {
-        progressBar = document.createElement('div');
-        progressBar.className = 'scroll-progress';
-        progressBar.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-            z-index: 9999;
-            transition: width 0.1s ease;
-        `;
-        document.body.appendChild(progressBar);
-    }
-
-    progressBar.style.width = scrolled + '%';
-}
-
-window.addEventListener('scroll', updateScrollProgress);
-
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-    // Add animation classes
-    document.querySelectorAll('.section-title').forEach(title => {
-        observer.observe(title);
-    });
-
-    // Update active nav on load
-    updateActiveNav();
-
-    console.log('Personal website loaded successfully!');
-});
