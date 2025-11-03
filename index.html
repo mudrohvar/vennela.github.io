@@ -17,8 +17,8 @@
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="articles.html">Articles</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="articles.html">Writing</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -37,9 +37,10 @@
                     Hi, I'm <span class="hero-name-personal">Rohit</span>
                 </h1>
                 <p class="hero-description-personal">
-                    I build products that people love to use. Currently at Google, I spend my days turning complex problems 
-                    into simple, elegant solutions. I believe the best products are born from understanding people deeply 
-                    and caring about the details that matter.
+                    I build products that <span class="text-highlight-pink">people love to use</span>. Currently at Google,
+                    I spend my days turning complex problems into <span class="text-highlight-yellow">simple, elegant solutions</span>.
+                    I believe the best products are born from understanding people deeply and caring about the
+                    <span class="text-highlight-teal">details that matter</span>.
                 </p>
                 <div class="hero-journey">
                     <div class="journey-item">
@@ -58,8 +59,8 @@
                     </div>
                 </div>
                 <div class="hero-actions">
-                    <a href="#products" class="btn-personal btn-primary-personal">See my work</a>
-                    <a href="about.html" class="btn-personal btn-secondary-personal">About me</a>
+                    <a href="projects.html" class="btn-personal btn-primary-personal">Explore My Projects</a>
+                    <a href="about.html" class="btn-personal btn-secondary-personal">Learn More About Me</a>
                 </div>
             </div>
         </div>
@@ -75,87 +76,48 @@
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products-section" id="products">
+    <!-- Quick Highlights Section -->
+    <section class="section" style="background: var(--bg-white); padding: 6rem 0;">
         <div class="container">
             <div class="section-header-personal">
-                <h2 class="section-title-personal">Products I've Built</h2>
+                <h2 class="section-title-personal">What I Do</h2>
                 <p class="section-subtitle-personal">
-                    Each product represents a different challenge, from scaling search for billions to building fintech from scratch
+                    A snapshot of my product management journey across industry-leading companies
                 </p>
             </div>
-
-            <div class="products-grid">
-                <!-- Google Search Product -->
-                <div class="product-card product-card-large fade-in-up">
-                    <div class="product-header">
-                        <div class="product-company">
-                            <div class="company-logo google-logo">G</div>
-                            <span>Google</span>
-                        </div>
-                        <div class="product-period">2023 - Present</div>
+            <div class="focus-grid">
+                <div class="focus-item" style="background: var(--bg-light-pink); border-color: var(--secondary-color);">
+                    <div class="focus-icon" style="color: var(--secondary-color);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.56 12.25C22.56 11.47 22.49 10.72 22.36 10H12V14.51H17.94C17.66 15.99 16.88 17.24 15.71 18.09V21.09H19.28C21.36 19.19 22.56 16.04 22.56 12.25Z" fill="currentColor"/>
+                            <path d="M12 23C15.24 23 17.95 21.93 19.28 19.09L15.71 18.09C14.64 18.97 13.17 19.48 12 19.48C8.87 19.48 6.22 17.3 5.27 14.4H1.49V17.5C2.82 20.14 6.05 23 12 23Z" fill="currentColor"/>
+                        </svg>
                     </div>
-                    <h3 class="product-title">Search Experience Enhancement</h3>
-                    <p class="product-description">
-                        Leading improvements to Google Search for emerging markets. Working with ML engineers, 
-                        designers, and researchers to make search more intuitive and accessible for diverse user needs.
-                    </p>
-                    <div class="product-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-label">Challenge:</span>
-                            <span>Making search work better for users with limited connectivity and diverse languages</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-label">Solution:</span>
-                            <span>Developed contextual search suggestions and offline-first features</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-label">Impact:</span>
-                            <span>Improved search experience for millions of users in emerging markets</span>
-                        </div>
-                    </div>
+                    <span class="badge badge-pink">Current</span>
+                    <h4 style="color: var(--text-dark); margin-top: 1rem;">Google</h4>
+                    <p style="color: var(--text-medium);">Leading search experience improvements for billions of users</p>
                 </div>
-
-                <!-- Amazon Product -->
-                <div class="product-card fade-in-up">
-                    <div class="product-header">
-                        <div class="product-company">
-                            <div class="company-logo amazon-logo">a</div>
-                            <span>Amazon</span>
-                        </div>
-                        <div class="product-period">2021 - 2022</div>
+                <div class="focus-item" style="background: var(--bg-light-orange); border-color: var(--accent-orange);">
+                    <div class="focus-icon" style="color: var(--accent-orange);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
                     </div>
-                    <h3 class="product-title">Mobile Shopping Experience</h3>
-                    <p class="product-description">
-                        Redesigned the mobile shopping flow to reduce friction and improve conversion. 
-                        Focused on the checkout experience and product discovery.
-                    </p>
-                    <div class="product-tags">
-                        <span class="tag">Mobile UX</span>
-                        <span class="tag">Conversion</span>
-                        <span class="tag">A/B Testing</span>
-                    </div>
+                    <span class="badge badge-orange">Previous</span>
+                    <h4 style="color: var(--text-dark); margin-top: 1rem;">Amazon</h4>
+                    <p style="color: var(--text-medium);">Redesigned mobile shopping experiences and drove conversion</p>
                 </div>
-
-                <!-- RobustWealth Product -->
-                <div class="product-card fade-in-up">
-                    <div class="product-header">
-                        <div class="product-company">
-                            <div class="company-logo robustwealth-logo">R</div>
-                            <span>RobustWealth</span>
-                        </div>
-                        <div class="product-period">2020 - 2021</div>
+                <div class="focus-item" style="background: var(--bg-light-purple); border-color: var(--accent-purple);">
+                    <div class="focus-icon" style="color: var(--accent-purple);">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
                     </div>
-                    <h3 class="product-title">Investment Platform</h3>
-                    <p class="product-description">
-                        Built an automated investment advisory platform from the ground up. 
-                        Led product strategy from concept to acquisition by Principal Financial.
-                    </p>
-                    <div class="product-tags">
-                        <span class="tag">0-1 Product</span>
-                        <span class="tag">FinTech</span>
-                        <span class="tag">B2C Platform</span>
-                    </div>
+                    <span class="badge badge-purple">Acquired</span>
+                    <h4 style="color: var(--text-dark); margin-top: 1rem;">RobustWealth</h4>
+                    <p style="color: var(--text-medium);">Built fintech platform from 0-1, acquired by Principal</p>
                 </div>
             </div>
         </div>
@@ -202,41 +164,36 @@
     <section class="current-focus-section">
         <div class="container">
             <div class="focus-content">
-                <h2 class="focus-title">What I'm Working On</h2>
+                <h2 class="focus-title">What I'm Focused On</h2>
                 <div class="focus-grid">
-                    <div class="focus-item">
-                        <div class="focus-icon">
+                    <div class="focus-item" style="background: var(--bg-light-purple); border-color: var(--accent-purple);">
+                        <div class="focus-icon" style="color: var(--accent-purple);">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21 16V8C20.9996 7.64927 20.9071 7.30481 20.7315 7.00116C20.556 6.69751 20.3037 6.44536 20 6.27L13 2.27C12.696 2.09446 12.3511 2.00205 12 2.00205C11.6489 2.00205 11.304 2.09446 11 2.27L4 6.27C3.69626 6.44536 3.44398 6.69751 3.26846 7.00116C3.09294 7.30481 3.00036 7.64927 3 8V16C3.00036 16.3507 3.09294 16.6952 3.26846 16.9988C3.44398 17.3025 3.69626 17.5546 4 17.73L11 21.73C11.304 21.9055 11.6489 21.9979 12 21.9979C12.3511 21.9979 12.696 21.9055 13 21.73L20 17.73C20.3037 17.5546 20.556 17.3025 20.7315 16.9988C20.9071 16.6952 20.9996 16.3507 21 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M7.5 4.21L12 6.81L16.5 4.21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M7.5 19.79V14.6L3 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M21 12L16.5 14.6V19.79" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M12 6.81V17.23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h4>AI-Powered Search</h4>
-                        <p>Exploring how AI can make search more conversational and context-aware</p>
+                        <h4 style="color: var(--text-dark);">AI-Powered Search</h4>
+                        <p style="color: var(--text-medium);">Exploring how AI can make search more conversational and context-aware</p>
                     </div>
-                    <div class="focus-item">
-                        <div class="focus-icon">
+                    <div class="focus-item" style="background: var(--bg-light-teal); border-color: var(--accent-teal);">
+                        <div class="focus-icon" style="color: var(--accent-teal);">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M2 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h4>Global Accessibility</h4>
-                        <p>Making products that work for everyone, regardless of location or ability</p>
+                        <h4 style="color: var(--text-dark);">Global Accessibility</h4>
+                        <p style="color: var(--text-medium);">Making products that work for everyone, regardless of location or ability</p>
                     </div>
-                    <div class="focus-item">
-                        <div class="focus-icon">
+                    <div class="focus-item" style="background: var(--bg-light-pink); border-color: var(--secondary-color);">
+                        <div class="focus-icon" style="color: var(--secondary-color);">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M21 21V19C21 16.7909 19.2091 15 17 15H1V19C1 21.2091 2.79086 23 5 23H17C19.2091 23 21 21.2091 21 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <h4>User Empathy</h4>
-                        <p>Building better research methods to understand user needs at scale</p>
+                        <h4 style="color: var(--text-dark);">User Empathy</h4>
+                        <p style="color: var(--text-medium);">Building better research methods to understand user needs at scale</p>
                     </div>
                 </div>
             </div>
@@ -267,7 +224,7 @@
                 </div>
             </div>
             <div class="writing-cta">
-                <a href="articles.html" class="btn-personal btn-secondary-personal">Read all articles</a>
+                <a href="articles.html" class="btn-personal btn-primary-personal">Explore My Writing</a>
             </div>
         </div>
     </section>
