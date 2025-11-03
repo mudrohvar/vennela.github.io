@@ -385,8 +385,8 @@ body {
 .main-content {
     margin-left: var(--sidebar-width);
     min-height: 100vh;
-    max-width: calc(100vw - var(--sidebar-width));
     position: relative;
+    overflow-x: hidden;
 }
 
 /* Center content within sections */
@@ -1800,19 +1800,14 @@ body {
 }
 
 /* Enhanced Animation Performance - GPU acceleration */
-.hero-content,
-.section-header,
-.about-text,
-.competencies,
-.philosophy-card,
-.thought-card,
-.writing-card,
-.contact-card,
-.competency-item,
-.timeline-item,
 [data-aos] {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    perspective: 1000px;
+}
+
+/* Prevent layout shifts during animations */
+.section {
+    overflow-x: clip;
 }
 
 /* Loading Animation */
