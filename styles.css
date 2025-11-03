@@ -79,7 +79,6 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    overflow-y: scroll;
     height: 100%;
     /* Improve scroll performance */
     -webkit-overflow-scrolling: touch;
@@ -90,7 +89,6 @@ body {
     background: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
-    overflow: visible;
     min-height: 100%;
     width: 100%;
     position: relative;
