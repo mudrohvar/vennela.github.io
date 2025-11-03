@@ -234,41 +234,59 @@ function initPageLoad() {
 // ==========================================
 // Parallax Effect for Hero Section
 // ==========================================
-window.addEventListener('scroll', function() {
+let ticking = false;
+let lastScrollY = 0;
+
+function updateParallax() {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero-content');
 
+    // Hero parallax
     if (hero && scrolled < window.innerHeight) {
         hero.style.transform = `translateY(${scrolled * 0.3}px)`;
         hero.style.opacity = 1 - (scrolled / 1000);
     }
 
-    // Parallax effect for decorative blobs
+    // Parallax effect for decorative blobs (simplified)
     const blobs = document.querySelectorAll('.decorative-blob');
     blobs.forEach((blob, index) => {
         const rect = blob.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        const isVisible = rect.top < window.innerHeight + 200 && rect.bottom > -200;
 
         if (isVisible) {
-            const speed = 0.1 + (index * 0.05); // Different speeds for each blob
-            const offset = (scrolled - rect.top) * speed;
+            const speed = 0.05 + (index * 0.02); // Reduced speeds for smoother performance
+            const offset = scrolled * speed;
+            // Use will-change for better performance
+            blob.style.willChange = 'transform';
             blob.style.transform = `translateY(${offset}px)`;
         }
     });
 
-    // Parallax effect for geometric decorations
+    // Parallax effect for geometric decorations (simplified)
     const geometrics = document.querySelectorAll('.geometric-decoration');
     geometrics.forEach((shape, index) => {
         const rect = shape.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        const isVisible = rect.top < window.innerHeight + 200 && rect.bottom > -200;
 
         if (isVisible) {
-            const speed = 0.15 + (index * 0.03);
-            const offset = (scrolled - rect.top) * speed;
-            shape.style.transform = `translateY(${offset}px) rotate(${offset * 0.5}deg)`;
+            const speed = 0.08 + (index * 0.02);
+            const offset = scrolled * speed;
+            shape.style.willChange = 'transform';
+            shape.style.transform = `translateY(${offset}px) rotate(${offset * 0.3}deg)`;
         }
     });
-});
+
+    ticking = false;
+}
+
+function requestTick() {
+    if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+    }
+}
+
+window.addEventListener('scroll', requestTick, { passive: true });
 
 // ==========================================
 // Cursor Effect (Optional - Subtle)
@@ -347,57 +365,30 @@ if (footerText) {
 // Decorative Elements Enhancement
 // ==========================================
 
-// Randomize blob positions slightly for variety
+// Randomize blob positions slightly for variety on load
 function randomizeBlobPositions() {
     const blobs = document.querySelectorAll('.decorative-blob');
     blobs.forEach(blob => {
-        const randomX = Math.random() * 40 - 20; // -20px to +20px
-        const randomY = Math.random() * 40 - 20;
-        const currentTransform = blob.style.transform || '';
-        blob.style.transform = `${currentTransform} translate(${randomX}px, ${randomY}px)`;
+        const randomX = Math.random() * 30 - 15; // -15px to +15px
+        const randomY = Math.random() * 30 - 15;
+        // Store initial offset as data attribute
+        blob.dataset.offsetX = randomX;
+        blob.dataset.offsetY = randomY;
     });
-}
-
-// Add subtle mouse movement effect to decorative elements
-function initMouseInteraction() {
-    let mouseX = 0;
-    let mouseY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX / window.innerWidth - 0.5;
-        mouseY = e.clientY / window.innerHeight - 0.5;
-    });
-
-    function animateDecorations() {
-        const blobs = document.querySelectorAll('.decorative-blob');
-        blobs.forEach((blob, index) => {
-            const speed = 20 + (index * 5);
-            const x = mouseX * speed;
-            const y = mouseY * speed;
-
-            const currentTransform = blob.style.transform || '';
-            if (!currentTransform.includes('translate')) {
-                blob.style.transform = `${currentTransform} translate(${x}px, ${y}px)`;
-            }
-        });
-
-        requestAnimationFrame(animateDecorations);
-    }
-
-    animateDecorations();
 }
 
 // Initialize on page load
 window.addEventListener('load', () => {
     randomizeBlobPositions();
-    initMouseInteraction();
+    // Trigger initial parallax update
+    requestTick();
 });
 
 // ==========================================
 // Performance Optimization
 // ==========================================
 
-// Debounce function for scroll events
+// Debounce function for scroll events (kept for potential future use)
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -409,13 +400,6 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// Apply debounce to scroll-heavy functions
-const debouncedScrollHandler = debounce(() => {
-    // Any expensive scroll operations go here
-}, 100);
-
-window.addEventListener('scroll', debouncedScrollHandler);
 
 // ==========================================
 // Console Easter Egg
