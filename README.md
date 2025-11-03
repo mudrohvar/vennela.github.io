@@ -1,97 +1,117 @@
 # Personal Website
 
-A modern, responsive personal website built for GitHub Pages. This website showcases your professional experience, published articles, and provides a downloadable resume.
+A modern, advanced, multi-page personal website built for GitHub Pages. This website showcases your professional experience, published articles, skills, values, and provides a downloadable resume with enhanced visuals and smooth animations.
 
 ## Features
 
-- ✨ Modern, clean design with smooth animations
+- ✨ Modern, advanced design with smooth animations
+- 📄 Multi-page structure (Home, About, Experience, Articles, Contact)
 - 📱 Fully responsive (mobile, tablet, desktop)
 - 🎨 Professional color scheme with gradient accents
+- 📊 Visual statistics, skill bars, and progress indicators
+- 🎯 Interactive preview cards and hover effects
 - ⚡ Fast loading and optimized
 - 🔍 SEO-friendly structure
-- 📄 Easy-to-update content placeholders
+- 📝 Easy-to-update content placeholders
 
-## Sections
+## Pages Structure
 
-1. **Hero Section** - Introduction with call-to-action buttons
-2. **About** - Personal background and introduction
-3. **Experience** - Timeline of your professional experience (Google, Amazon, RobustWealth, EY)
-4. **Articles** - Grid showcasing your published online articles
-5. **Resume** - Downloadable resume section
-6. **Contact** - Social links and contact information
+1. **Home (index.html)** - Landing page with hero section, quick stats, preview cards, and company showcase
+2. **About (about.html)** - Detailed personal introduction, values, and skills with progress bars
+3. **Experience (experience.html)** - Enhanced timeline with company icons, achievements, and detailed role descriptions
+4. **Articles (articles.html)** - Beautiful article cards with images, stats, and platform badges
+5. **Contact (contact.html)** - Contact information and resume download section
 
 ## Getting Started
 
 ### 1. Update Your Content
 
-#### Personal Information
+#### Personal Information (All Pages)
 
-Open `index.html` and search for the following placeholders:
+Replace "Your Name" throughout all HTML files:
+- Navigation logo and footer on all pages
+- Page titles in `<title>` tags
+- Any other references to your name
 
-- **Hero Section** (around line 29):
-  - Replace "Your Name" in the navigation logo and footer
-  - Update "Product Manager at Google" title if needed
-  - Customize the subtitle text
+#### Home Page (index.html)
 
-#### About Section (around line 42-58):
+Search for the following placeholders:
 
-Replace the Lorem ipsum text with:
-- Your personal introduction
-- Background and interests
-- Professional philosophy
-- Replace the image placeholder with your photo:
+- **Hero Section**:
+  - Update the hero badge text ("Product Manager")
+  - Update the main title and subtitle
+  - Update button links if needed
+
+- **Stats Section**:
+  - Update the numbers and labels (Companies, Articles, Collaborations, Years Experience)
+  - Adjust stat icons if needed
+
+- **Preview Cards**:
+  - Update descriptions for About, Experience, Articles, and Contact previews
+
+- **Companies Section**:
+  - Company logos are placeholders - replace with actual logos or keep text placeholders
+
+#### About Page (about.html):
+
+Update the following sections:
+- **About Detail**: Replace Lorem ipsum with your personal introduction, background, and professional philosophy
+- **Photo**: Replace the image placeholder with your photo:
   ```html
-  <!-- Replace this placeholder -->
-  <div class="image-placeholder">
-      <p>Your Photo Here</p>
-  </div>
-  <!-- With your actual image -->
-  <img src="your-photo.jpg" alt="Your Name" style="width: 100%; max-width: 400px; border-radius: 12px;">
+  <!-- Replace this -->
+  <div class="image-placeholder-large">...</div>
+  <!-- With -->
+  <img src="your-photo.jpg" alt="Your Name" style="width: 100%; border-radius: 16px;">
   ```
+- **Values Section**: Update the four value cards (User-Centric, Data-Driven, Innovation, Execution) with your descriptions
+- **Skills Section**: 
+  - Update skill categories and names
+  - Adjust skill percentages (the `width` value in `style="width: 95%"`)
+  - Add or remove skills as needed
 
-#### Experience Section (around line 69-170):
+#### Experience Page (experience.html):
 
 For each job (Google, Amazon, RobustWealth, EY):
-1. Update the job title in `<h3>Product Manager</h3>`
+1. Update the job title in the `<h3>` tag
 2. Update the dates: `[Start Date] - [End Date]` or `[Start Date] - Present`
-3. Replace the description with your actual role description
-4. Replace the bullet points with your key achievements:
-   ```html
-   <li>Your actual achievement #1</li>
-   <li>Your actual achievement #2</li>
-   <li>Your actual achievement #3</li>
-   ```
+3. Update the location (currently shows as "Mountain View, CA" or "Location")
+4. Replace the description with your actual role description
+5. Update the achievement list items - replace the placeholder text with your actual achievements
+6. Adjust timeline badges (currently Google has "Current", RobustWealth has "Acquired by Principal")
 
-#### Articles Section (around line 174-231):
+#### Articles Page (articles.html):
 
 For each article card:
-1. Update the date: `[Date]` (e.g., "January 2024")
-2. Update the platform: `[Platform Name]` (e.g., "Medium", "LinkedIn")
-3. Replace the article title
-4. Update the article link: `href="#"` → `href="https://your-article-url.com"`
-5. Replace the excerpt with a brief description
-6. Add more article cards by copying the structure if needed
+1. **Article Image**: Replace the placeholder div with an actual image:
+   ```html
+   <!-- Replace -->
+   <div class="article-image-placeholder">...</div>
+   <!-- With -->
+   <img src="article-image.jpg" alt="Article Title" style="width: 100%; height: 200px; object-fit: cover;">
+   ```
+2. Update the date: `[Date]` (e.g., "January 2024")
+3. Update the platform badge class: `medium`, `linkedin`, or `other` - this changes the badge color
+4. Replace the article title
+5. Update both article links: `href="#"` → `href="https://your-article-url.com"`
+6. Replace the excerpt with a brief description
+7. Update view and like counts (currently placeholder numbers)
+8. Add more article cards by copying the entire `<article class="article-card-advanced">` structure
 
-#### Resume Section (around line 236-250):
+#### Contact Page (contact.html):
 
+**Contact Methods Section:**
+1. Update email address: `your.email@example.com`
+2. Update LinkedIn profile URL
+3. Update Twitter/X handle URL
+4. Update the contact method descriptions if needed
+
+**Resume Section:**
 1. Upload your resume PDF to the root directory of this repository
 2. Update the filename if different from "resume.pdf":
    ```html
    <a href="your-resume.pdf" class="btn btn-primary btn-large" download>
    ```
-3. Remove or update the note about the filename
-
-#### Contact Section (around line 256-289):
-
-Update the contact links:
-- Email: Replace `your.email@example.com`
-- LinkedIn: Replace `https://linkedin.com/in/yourprofile`
-- Twitter: Replace `https://twitter.com/yourhandle`
-- Remove any social links you don't want to include
-
-#### Footer (around line 295):
-
-Replace "Your Name" with your actual name if not already done.
+3. Remove or update the note about the filename if desired
 
 ### 2. Styling Customization (Optional)
 
@@ -177,7 +197,11 @@ If you want to use a custom domain:
 
 ```
 PersonalWebsite/
-├── index.html          # Main HTML file
+├── index.html          # Home page
+├── about.html          # About page
+├── experience.html     # Experience page
+├── articles.html       # Articles page
+├── contact.html        # Contact & Resume page
 ├── styles.css          # Stylesheet with animations
 ├── script.js           # JavaScript for interactivity
 ├── README.md          # This file
@@ -198,6 +222,9 @@ PersonalWebsite/
 3. **Use action verbs**: Started, Led, Improved, Launched, etc.
 4. **Add numbers**: Include metrics when possible (e.g., "Increased revenue by 25%")
 5. **Article excerpts**: Keep them to 1-2 sentences that entice readers
+6. **Skill percentages**: Be honest about your skill levels - adjust percentages in about.html
+7. **Images**: For best results, use high-quality images (recommended: 800x600px for articles, square for profile)
+8. **Company logos**: You can replace text placeholders with actual logo images for a more professional look
 
 ## Troubleshooting
 
