@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Philosophy & Ideology | Product Manager</title>
+    <meta name="description" content="My principles and philosophy on product management, user experience, and building products that create meaningful impact.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">PM</a>
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="work.html" class="nav-link">Work</a>
+                <a href="writing.html" class="nav-link">Writing</a>
+                <a href="philosophy.html" class="nav-link active">Philosophy</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Philosophy Hero -->
+    <section class="case-study-header">
+        <div class="container">
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <h1>My Product Management <span class="gradient-text">Philosophy</span></h1>
+                <p style="font-size: 1.25rem; margin-top: var(--spacing-lg); color: var(--color-gray);">
+                    These principles guide how I approach product management, make decisions, and build teams.
+                    Developed over years at Google, Amazon, EY, and Robustwealth, they represent what I've learned about
+                    building products that create lasting value.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Beliefs -->
+    <section style="padding: var(--spacing-3xl) 0; background: var(--color-white);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="margin-bottom: var(--spacing-xl); text-align: center;">Core Beliefs</h2>
+
+                <div style="display: grid; gap: var(--spacing-2xl);">
+                    <!-- Belief 1 -->
+                    <div style="background: linear-gradient(135deg, #E0E7FF 0%, #DBEAFE 100%); padding: var(--spacing-xl); border-radius: var(--radius-lg); border-left: 5px solid var(--color-primary);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🎯</div>
+                        <h3 style="margin-bottom: var(--spacing-md); color: var(--color-primary);">Impact Over Output</h3>
+                        <p style="font-size: 1.125rem; margin-bottom: var(--spacing-md);">
+                            <strong>Shipping features doesn't equal creating value.</strong> I measure success by the problems solved and the impact created,
+                            not by the number of features shipped or story points completed.
+                        </p>
+                        <p>
+                            In practice, this means I'd rather ship one well-researched, beautifully executed feature that delights users and moves business
+                            metrics than ten half-baked features that clutter the product. At Google, we cut our roadmap from 40 features to 8—and
+                            paradoxically shipped faster and had more impact.
+                        </p>
+                        <div style="background: rgba(255,255,255,0.7); padding: var(--spacing-md); border-radius: var(--radius-md); margin-top: var(--spacing-md); font-style: italic;">
+                            "Great PMs understand that what you choose NOT to build is just as important as what you build."
+                        </div>
+                    </div>
+
+                    <!-- Belief 2 -->
+                    <div style="background: linear-gradient(135deg, #FCE7F3 0%, #FEE2E2 100%); padding: var(--spacing-xl); border-radius: var(--radius-lg); border-left: 5px solid var(--color-secondary);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">👥</div>
+                        <h3 style="margin-bottom: var(--spacing-md); color: var(--color-secondary);">User Empathy is Non-Negotiable</h3>
+                        <p style="font-size: 1.125rem; margin-bottom: var(--spacing-md);">
+                            <strong>You can't build great products for users you don't understand.</strong> Data tells you what is happening;
+                            talking to users tells you why it's happening.
+                        </p>
+                        <p>
+                            I make it a point to talk to at least 5 users every week, regardless of how busy I am. These conversations have saved me from
+                            building the wrong thing more times than I can count. At Amazon, a single user interview revealed that our proposed checkout
+                            "improvement" would actually frustrate power users—saving us from a costly mistake.
+                        </p>
+                        <div style="background: rgba(255,255,255,0.7); padding: var(--spacing-md); border-radius: var(--radius-md); margin-top: var(--spacing-md);">
+                            <strong>My approach:</strong> Treat every user conversation as an opportunity to uncover insights, not validate assumptions.
+                            Ask "why" five times. Listen more than you talk. Observe behavior, not just what people say they do.
+                        </div>
+                    </div>
+
+                    <!-- Belief 3 -->
+                    <div style="background: linear-gradient(135deg, #D1FAE5 0%, #DBEAFE 100%); padding: var(--spacing-xl); border-radius: var(--radius-lg); border-left: 5px solid var(--color-accent-1);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">📊</div>
+                        <h3 style="margin-bottom: var(--spacing-md); color: var(--color-accent-1);">Data-Informed, Not Data-Driven</h3>
+                        <p style="font-size: 1.125rem; margin-bottom: var(--spacing-md);">
+                            <strong>Data is a powerful tool, but context matters more than numbers.</strong> Being data-driven without understanding
+                            the "why" behind the metrics can lead to optimizing for the wrong things.
+                        </p>
+                        <p>
+                            At Amazon, I learned to love metrics. But I also learned that metrics can lie. A 15% improvement in click-through rate sounds
+                            great—until you realize it came from a dark pattern that eroded long-term trust. I use data to inform decisions, but I combine
+                            quantitative insights with qualitative understanding, strategic thinking, and sometimes gut instinct earned through experience.
+                        </p>
+                        <div style="background: rgba(255,255,255,0.7); padding: var(--spacing-md); border-radius: var(--radius-md); margin-top: var(--spacing-md);">
+                            <strong>Key questions I always ask:</strong> What's the metric measuring? What's it not capturing? What incentives does this
+                            metric create? How could this be gamed? What's the qualitative feedback saying?
+                        </div>
+                    </div>
+
+                    <!-- Belief 4 -->
+                    <div style="background: linear-gradient(135deg, #FEF3C7 0%, #FED7AA 100%); padding: var(--spacing-xl); border-radius: var(--radius-lg); border-left: 5px solid var(--color-accent-2);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🚀</div>
+                        <h3 style="margin-bottom: var(--spacing-md); color: var(--color-accent-2);">Ship Fast, Learn Faster</h3>
+                        <p style="font-size: 1.125rem; margin-bottom: var(--spacing-md);">
+                            <strong>Perfect is the enemy of shipped.</strong> The best way to learn is to get your product in front of real users,
+                            not to endlessly debate in conference rooms.
+                        </p>
+                        <p>
+                            I'm a strong believer in iterative development. Ship the smallest version that delivers value, gather feedback, and iterate.
+                            This doesn't mean shipping broken products—it means being thoughtful about what "good enough" looks like for a first version.
+                            At Robustwealth, we launched our mobile app with 40% of the planned features but got it into users' hands 3 months earlier.
+                            The feedback we gathered shaped a much better product than we would have built in isolation.
+                        </p>
+                        <div style="background: rgba(255,255,255,0.7); padding: var(--spacing-md); border-radius: var(--radius-md); margin-top: var(--spacing-md); font-style: italic;">
+                            "The market doesn't care about your roadmap. Ship, learn, adjust. Repeat."
+                        </div>
+                    </div>
+
+                    <!-- Belief 5 -->
+                    <div style="background: linear-gradient(135deg, #EDE9FE 0%, #E0E7FF 100%); padding: var(--spacing-xl); border-radius: var(--radius-lg); border-left: 5px solid var(--color-accent-3);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🤝</div>
+                        <h3 style="margin-bottom: var(--spacing-md); color: var(--color-accent-3);">Product is a Team Sport</h3>
+                        <p style="font-size: 1.125rem; margin-bottom: var(--spacing-md);">
+                            <strong>The best products emerge from collaboration, not hero PMs.</strong> Engineering, design, data science, marketing—
+                            everyone brings unique perspectives that make the product better.
+                        </p>
+                        <p>
+                            I see my role as enabling the team, not dictating to them. Engineers often have the best product ideas because they understand
+                            technical possibilities. Designers see user friction that I miss. Data scientists uncover patterns that inform strategy.
+                            My job is to create alignment, provide context, and empower everyone to contribute their best thinking.
+                        </p>
+                        <div style="background: rgba(255,255,255,0.7); padding: var(--spacing-md); border-radius: var(--radius-md); margin-top: var(--spacing-md);">
+                            <strong>How I build trust:</strong> Give credit generously. Admit when I'm wrong. Seek input before making decisions.
+                            Protect the team from distractions. Celebrate wins together, take ownership of failures myself.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Decision-Making Framework -->
+    <section style="padding: var(--spacing-3xl) 0; background: var(--color-bg-light);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="margin-bottom: var(--spacing-xl); text-align: center;">My Decision-Making Framework</h2>
+                <p style="text-align: center; font-size: 1.125rem; color: var(--color-gray); margin-bottom: var(--spacing-2xl);">
+                    How I approach product decisions, from feature prioritization to strategic bets
+                </p>
+
+                <div style="display: grid; gap: var(--spacing-lg);">
+                    <!-- Step 1 -->
+                    <div style="display: flex; gap: var(--spacing-md); background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+                        <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--gradient-primary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800;">1</div>
+                        <div>
+                            <h3 style="margin-bottom: var(--spacing-sm);">Understand the Problem Deeply</h3>
+                            <p>Before jumping to solutions, I spend time understanding the root problem. What's the user trying to accomplish?
+                            Why is the current solution failing? What constraints exist? I use the "5 Whys" technique and talk to multiple stakeholders
+                            to ensure I'm solving the real problem, not just symptoms.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div style="display: flex; gap: var(--spacing-md); background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+                        <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--gradient-secondary); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800;">2</div>
+                        <div>
+                            <h3 style="margin-bottom: var(--spacing-sm);">Gather Diverse Perspectives</h3>
+                            <p>I actively seek out disagreement. Engineers might see technical solutions I haven't considered. Designers might propose
+                            UX approaches that reframe the problem. Support teams hear user pain points daily. I create space for all voices and
+                            actively listen to perspectives different from my own.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div style="display: flex; gap: var(--spacing-md); background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+                        <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--gradient-accent); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800;">3</div>
+                        <div>
+                            <h3 style="margin-bottom: var(--spacing-sm);">Evaluate Against Strategic Goals</h3>
+                            <p>Every decision should ladder up to company strategy. I ask: Does this move us closer to our North Star? How does this
+                            impact our key metrics? What's the opportunity cost? I use frameworks like RICE (Reach, Impact, Confidence, Effort) to
+                            make prioritization objective and defensible.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div style="display: flex; gap: var(--spacing-md); background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+                        <div style="flex-shrink: 0; width: 60px; height: 60px; background: var(--gradient-warm); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800;">4</div>
+                        <div>
+                            <h3 style="margin-bottom: var(--spacing-sm);">Make the Decision & Communicate Clearly</h3>
+                            <p>After gathering input, I make a decision and clearly communicate the "why" behind it. I document the reasoning, the
+                            alternatives considered, and the criteria used. This creates alignment and helps the team understand how to make similar
+                            decisions independently in the future.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div style="display: flex; gap: var(--spacing-md); background: var(--color-white); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+                        <div style="flex-shrink: 0; width: 60px; height: 60px; background: linear-gradient(135deg, #8B5CF6 0%, #6366F1 100%); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: 800;">5</div>
+                        <div>
+                            <h3 style="margin-bottom: var(--spacing-sm);">Ship, Measure, Learn, Iterate</h3>
+                            <p>I'm comfortable being wrong if we learn quickly. I set clear success criteria upfront, measure rigorously after launch,
+                            and am willing to change course based on data. Some of my best product decisions came from admitting a previous decision
+                            was wrong and pivoting based on what we learned.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Value in Teams -->
+    <section style="padding: var(--spacing-3xl) 0; background: var(--color-white);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="margin-bottom: var(--spacing-xl); text-align: center;">What I Value in Product Teams</h2>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); margin-top: var(--spacing-xl);">
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🎨</div>
+                        <h3 style="margin-bottom: var(--spacing-sm);">Craft Over Speed</h3>
+                        <p>I value teams that care deeply about quality and sweat the details. Ship fast, but ship things you're proud of.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">💬</div>
+                        <h3 style="margin-bottom: var(--spacing-sm);">Radical Transparency</h3>
+                        <p>The best teams communicate openly. Share bad news early. Disagree and commit. No hidden agendas or politics.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🔬</div>
+                        <h3 style="margin-bottom: var(--spacing-sm);">Intellectual Curiosity</h3>
+                        <p>Great PMs are endlessly curious. They ask "why" constantly and genuinely want to understand how things work.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🌱</div>
+                        <h3 style="margin-bottom: var(--spacing-sm);">Growth Mindset</h3>
+                        <p>I value people who see failures as learning opportunities and actively seek feedback to improve their craft.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">⚡</div>
+                        <h3 style="margin-bottom: var(--spacing-sm);">Bias to Action</h3>
+                        <p>Analysis paralysis kills momentum. Great teams make decisions with 70% of the information and adjust as they learn.</p>
+                    </div>
+
+                    <div style="text-align: center; padding: var(--spacing-lg);">
+                        <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🎯</div>
+                        <h3 style="margin-bottom: var(--spacing-sm);">User-First Thinking</h3>
+                        <p>Every decision should start with "what's best for the user?" Revenue and metrics are important, but users come first.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles in Action -->
+    <section style="padding: var(--spacing-3xl) 0; background: linear-gradient(135deg, #E0E7FF 0%, #DBEAFE 100%);">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto;">
+                <h2 style="margin-bottom: var(--spacing-md); text-align: center;">These Principles in Action</h2>
+                <p style="text-align: center; font-size: 1.125rem; color: var(--color-gray); margin-bottom: var(--spacing-2xl);">
+                    Real examples of how these beliefs shaped product decisions
+                </p>
+
+                <div style="display: grid; gap: var(--spacing-xl);">
+                    <div style="background: rgba(255,255,255,0.9); padding: var(--spacing-xl); border-radius: var(--radius-lg); backdrop-filter: blur(10px);">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Google: Cutting the Roadmap by 80%</h3>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            When I joined the GCP team, we had 40 features on the roadmap for the next quarter. After talking to users and analyzing usage data,
+                            I realized 32 of those features were "nice to haves" that wouldn't move the needle on our core metrics.
+                        </p>
+                        <p>
+                            I proposed cutting the roadmap to 8 features that would genuinely improve developer experience. It was a hard sell—stakeholders
+                            had pet projects on the list. But by focusing on impact over output, we shipped those 8 features with exceptional quality,
+                            increased user satisfaction by 30 points, and ironically shipped faster because we weren't context-switching constantly.
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.9); padding: var(--spacing-xl); border-radius: var(--radius-lg); backdrop-filter: blur(10px);">
+                        <h3 style="color: var(--color-secondary); margin-bottom: var(--spacing-md);">Amazon: Killing a Feature After Launch</h3>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            We shipped a new checkout feature that showed a 12% increase in one-click purchases. The data looked great. But qualitative
+                            feedback told a different story—users felt manipulated, and trust scores were declining.
+                        </p>
+                        <p>
+                            I made the call to kill the feature despite the positive metrics. Short-term wins aren't worth long-term trust erosion.
+                            We redesigned the feature to be more transparent, and while the conversion lift was only 6%, user sentiment improved significantly.
+                            This reinforced my belief in being data-informed, not data-driven.
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255,255,255,0.9); padding: var(--spacing-xl); border-radius: var(--radius-lg); backdrop-filter: blur(10px);">
+                        <h3 style="color: var(--color-accent-1); margin-bottom: var(--spacing-md);">Robustwealth: Shipping the MVP in 3 Months</h3>
+                        <p style="margin-bottom: var(--spacing-md);">
+                            The initial plan for our mobile app was a 9-month timeline with 60+ features. I pushed back hard, arguing that we could ship
+                            a valuable product in 3 months with just 25 core features.
+                        </p>
+                        <p>
+                            We launched the lean version, and the feedback was invaluable. Users wanted features we hadn't even considered, and several
+                            "must-have" features on our original roadmap went completely unused. By shipping fast and learning, we built a better product
+                            than we would have by following the original plan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Thoughts -->
+    <section style="padding: var(--spacing-3xl) 0; background: var(--color-white);">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="margin-bottom: var(--spacing-md);">Principles Evolve With Experience</h2>
+                <p style="font-size: 1.125rem; color: var(--color-gray); margin-bottom: var(--spacing-xl);">
+                    These principles aren't set in stone. They've evolved as I've learned from successes, failures, and countless conversations
+                    with users, teammates, and other PMs. I'm sure they'll continue to evolve as I take on new challenges and learn new things.
+                </p>
+                <p style="font-size: 1.125rem; color: var(--color-gray); margin-bottom: var(--spacing-xl);">
+                    What won't change is my commitment to putting users first, building with integrity, and creating products that genuinely
+                    make people's lives better.
+                </p>
+                <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-top: var(--spacing-2xl);">
+                    <a href="work.html" class="btn btn-primary">See These Principles in Action</a>
+                    <a href="mailto:your.email@gmail.com" class="btn btn-secondary">Let's Discuss</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Your Name. Building products that matter.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="work.html">Work</a>
+                    <a href="writing.html">Writing</a>
+                    <a href="philosophy.html">Philosophy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
