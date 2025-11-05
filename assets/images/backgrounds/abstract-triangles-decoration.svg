@@ -1,0 +1,17 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Large triangles -->
+  <polygon points="100,600 400,100 700,600" fill="#2563eb" opacity="0.06"/>
+  <polygon points="200,700 500,300 800,700" fill="#3b82f6" opacity="0.05"/>
+
+  <!-- Medium triangles -->
+  <polygon points="50,200 200,50 350,200" fill="#60a5fa" opacity="0.08"/>
+  <polygon points="500,500 650,350 800,500" fill="#2563eb" opacity="0.07"/>
+
+  <!-- Small accent triangles -->
+  <polygon points="150,450 250,350 350,450" fill="#1e40af" opacity="0.09"/>
+  <polygon points="550,250 600,150 650,250" fill="#3b82f6" opacity="0.1"/>
+
+  <!-- Tiny triangles scattered -->
+  <polygon points="400,600 450,550 500,600" fill="#60a5fa" opacity="0.12"/>
+  <polygon points="100,100 130,70 160,100" fill="#2563eb" opacity="0.08"/>
+</svg>

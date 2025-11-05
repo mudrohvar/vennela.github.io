@@ -1,0 +1,17 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Large background circle -->
+  <circle cx="400" cy="400" r="350" fill="#2563eb" opacity="0.05"/>
+
+  <!-- Medium circles -->
+  <circle cx="200" cy="200" r="150" fill="#3b82f6" opacity="0.08"/>
+  <circle cx="600" cy="600" r="180" fill="#60a5fa" opacity="0.06"/>
+
+  <!-- Small accent circles -->
+  <circle cx="150" cy="600" r="80" fill="#2563eb" opacity="0.1"/>
+  <circle cx="650" cy="200" r="100" fill="#1e40af" opacity="0.07"/>
+
+  <!-- Tiny detail circles -->
+  <circle cx="400" cy="100" r="40" fill="#3b82f6" opacity="0.12"/>
+  <circle cx="100" cy="400" r="50" fill="#60a5fa" opacity="0.09"/>
+  <circle cx="700" cy="400" r="45" fill="#2563eb" opacity="0.08"/>
+</svg>
