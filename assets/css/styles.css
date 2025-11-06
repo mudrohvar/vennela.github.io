@@ -958,6 +958,38 @@ a:hover {
   opacity: 0.8;
 }
 
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  color: white;
+  transition: all var(--transition-base);
+  backdrop-filter: blur(10px);
+}
+
+.social-links a:hover {
+  background-color: white;
+  color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+}
+
 /* ========================================
    Responsive Design
    ======================================== */
