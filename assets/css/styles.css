@@ -199,6 +199,27 @@ a:hover {
   box-shadow: var(--shadow-lg);
 }
 
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 /* ========================================
    Navigation Header
    ======================================== */
@@ -1142,6 +1163,15 @@ a:hover {
   .hero-cta .btn {
     width: 100%;
     padding: 1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
   }
 
   .philosophy-card {
